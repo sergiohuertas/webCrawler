@@ -25,7 +25,7 @@ pip install -r requirements.txt
 ## Uso
 
 ```bash
-python crawler.py https://www.directoalpaladar.com/ --max-pages 10
+python crawler.py https://www.*.com/ --max-pages 10
 ```
 
 ### Windows: si `python` no funciona o no te deja ejecutar
@@ -39,13 +39,13 @@ Solución rápida — usa el `python.exe` del entorno virtual directamente, sin
 activarlo:
 
 ```bat
-.venv\Scripts\python.exe crawler.py https://www.directoalpaladar.com/ --max-pages 10
+.venv\Scripts\python.exe crawler.py https://www.*.com/ --max-pages 10
 ```
 
 O usa el lanzador incluido (crea el `.venv` la primera vez):
 
 ```bat
-run.bat https://www.directoalpaladar.com/ --max-pages 10
+run.bat https://www.*.com/ --max-pages 10
 ```
 
 Para poder escribir solo `python`, abre una terminal **nueva** después de
@@ -72,7 +72,7 @@ listado, que en muchos sitios es distinto):
 ```bash
 # En Directo al Paladar la portada de "postres" es /categoria/postres,
 # pero sus artículos cuelgan de /postres/...
-python crawler.py https://www.directoalpaladar.com/categoria/postres --path-prefix /postres/
+python crawler.py https://www.*.com/categoria/postres --path-prefix /postres/
 ```
 
 La URL inicial (la *semilla*) se analiza siempre aunque no cumpla el prefijo;
@@ -83,15 +83,15 @@ incluir también la paginación del listado (`/categoria/postres/2`, `/3`…)
 además de los artículos:
 
 ```bash
-python crawler.py https://www.directoalpaladar.com/categoria/postres \
+python crawler.py https://www.*.com/categoria/postres \
     --path-prefix /postres/,/categoria/postres
 ```
 
 Durante la ejecución se muestra el progreso:
 
 ```text
-[1/10] 200 https://www.directoalpaladar.com/
-[2/10] 200 https://www.directoalpaladar.com/...
+[1/10] 200 https://www.*.com/
+[2/10] 200 https://www.*.com/...
 ...
 ```
 
